@@ -1,0 +1,12 @@
+[
+    {
+        "url": "http://www.google.pl",
+        "status": "waiting",
+        "text": null
+    },
+    {
+        "url": "http://www.semantive.pl",
+        "status": "success",
+        "text": "A text"
+    }
+]

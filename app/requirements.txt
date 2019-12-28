@@ -1,0 +1,13 @@
+aiohttp
+asynctest
+beautifulsoup4
+celery
+Flask
+flask-restplus
+flask-mongoengine
+gunicorn
+mongomock
+pytest
+pytest-mock
+uri
+

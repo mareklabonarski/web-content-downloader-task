@@ -1,0 +1,45 @@
+version: '3'
+
+
+services:
+  broker:
+    image: rabbitmq
+
+  db:
+    image: mongo
+
+  executor:
+    build:
+      context: app
+    image: semantive_app_image:latest
+    env_file:
+      - .env
+    command: celery -A app.celery_worker worker --loglevel=info -E
+    depends_on:
+      - broker
+      - db
+    volumes:
+      - media:${MEDIA_PATH}
+
+  app:
+    build:
+      context: app
+    image: semantive_app_image:latest
+    command: gunicorn -w 4 -b 0.0.0.0:5000 app.wsgi:app
+    depends_on:
+      - executor
+      - db
+
+  nginx:
+    build: ./nginx
+    env_file:
+      - .env
+    volumes:
+      - media:${MEDIA_PATH}:ro
+    ports:
+      - 80:80
+    depends_on:
+      - app
+
+volumes:
+  media:

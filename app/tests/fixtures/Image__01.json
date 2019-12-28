@@ -1,0 +1,24 @@
+[
+    {
+        "src": "http://www.google.pl/12345",
+        "status": "waiting",
+        "tasks": []
+    },
+    {
+        "src": "http://www.semantive.pl/duck.png",
+        "status": "error",
+        "tasks": []
+    },
+    {
+        "src": "http://www.onet.pl/files/horse.png",
+        "status": "success",
+        "name": "Horse",
+        "storage_url": "/media/horse.png",
+        "tasks": []
+    },
+    {
+        "src": "http://www.google.pl/1234567",
+        "status": "in progress",
+        "tasks": []
+    }
+]
