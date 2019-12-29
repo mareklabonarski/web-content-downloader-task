@@ -16,13 +16,13 @@
 ```
 
 ## API
-/images_tasks  POST, GET
-/images_tasks/id  GET
-/images_tasks/id/images GET
-/images_tasks/id/images/id  GET
-/text_tasks POST, GET
-/text_tasks/id GET
-/text_tasks/id/text GET
+- /images_tasks  POST, GET
+- /images_tasks/id  GET
+- /images_tasks/id/images GET
+- /images_tasks/id/images/id  GET
+- /text_tasks POST, GET
+- /text_tasks/id GET
+- /text_tasks/id/text GET
 
 
 ## Info
