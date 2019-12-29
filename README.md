@@ -15,6 +15,16 @@
 ./fetch_some_data.sh  #  trigger data collection
 ```
 
+## API
+/images_tasks  POST, GET
+/images_tasks/id  GET
+/images_tasks/id/images GET
+/images_tasks/id/images/id  GET
+/text_tasks POST, GET
+/text_tasks/id GET
+/text_tasks/id/text GET
+
+
 ## Info
 The whole microservice consists of 5 containers:
 - flask rest application
