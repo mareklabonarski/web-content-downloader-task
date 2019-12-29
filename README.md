@@ -62,6 +62,7 @@ If a task can see, that its resource collection has been attempted in the past:
  ## Issues:
   - There could be separate images for celery and flask. I build one, because it was easier to handle dependencies between them:
     - celery tasks and flask app both use same models
+  - task coroutines were actually implemented in models. It made my life easier, but that code logically fits celery tasks better
   - celery worker may leave db connection open (to be investigated)
   - I didn't use pylint - the code should be quite PEP8-tish though 
   - there are unit tests, but for simple scenarios. It would be good to have scenarios with paraller requests, same data sources etc.
