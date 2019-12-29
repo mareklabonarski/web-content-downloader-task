@@ -59,6 +59,13 @@ If a task can see, that its resource collection has been attempted in the past:
    - spent a lot of time on choosing libraries (i.e. had to revert solution from pymongo to mongoengine with ORM)
    - first time configuration is never straightforward
    
+ ## Most interesting points (python skill indicators)
+ - quite nice api Resource class inheritance structure (**app/api/endpoints/***)
+ - asyncio usage (**app/models.py**, **app/utils.run_with_asyncio**)
+ - selective mocking of client session, session context using **set_side_effect** (**app/tests/conftest.py**, **app/tests/test_tasks.py**)
+ - good exception handling (**app/models.py**)
+ - even **reduce** had a chance to be applied (**app/tests/conftest.py**)
+   
  ## Issues:
   - There could be separate images for celery and flask. I build one, because it was easier to handle dependencies between them:
     - celery tasks and flask app both use same models
