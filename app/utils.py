@@ -29,7 +29,7 @@ def get_text_from_html(html):
         for tag in soup(["script", "style"]):
             tag.decompose()  # rip it out
         return '\n'.join(line for line in soup.get_text().splitlines() if line)
-    except Exception as e:
+    except (AssertionError, AttributeError, LookupError, TypeError, ValueError) as e:
         raise ParsingException from e
 
 
@@ -37,7 +37,7 @@ def get_images_from_html(html):
     try:
         soup = BeautifulSoup(html, 'html.parser')
         return [{'src': img['src'], 'name': img.get('alt')} for img in soup.find_all('img') if img.get('src')]
-    except Exception as e:
+    except (AssertionError, AttributeError, LookupError, TypeError, ValueError) as e:
         raise ParsingException from e
 
 
